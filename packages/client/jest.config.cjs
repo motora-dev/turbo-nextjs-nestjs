@@ -6,7 +6,7 @@ module.exports = {
   collectCoverage: process.env.COLLECT_COVERAGE === 'true',
   collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx', '!src/**/*.spec.ts', '!src/**/*.spec.tsx', '!src/**/*.d.ts'],
   coverageDirectory: './coverage',
-  coverageReporters: ['text', 'json'],
+  coverageReporters: ['text', 'json', 'lcov'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   testMatch: ['**/?(*.)+(spec).(ts|tsx)'],
   transform: {

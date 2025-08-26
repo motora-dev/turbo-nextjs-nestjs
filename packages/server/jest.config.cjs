@@ -6,7 +6,7 @@ module.exports = {
   collectCoverageFrom: ['src/**/*.ts', '!src/**/*.spec.ts', '!src/main.ts'],
   coverageProvider: 'babel',
   coverageDirectory: './coverage',
-  coverageReporters: ['text', 'json'],
+  coverageReporters: ['text', 'json', 'lcov'],
   moduleFileExtensions: ['js', 'json', 'ts'],
   testRegex: '.*\\.spec.ts$',
   transform: {
