@@ -81,8 +81,8 @@ pnpm install
 pnpm dev
 
 # 個別に起動
-pnpm --filter @monorepo/client dev    # Next.js (http://localhost:4200)
-pnpm --filter @monorepo/server dev    # NestJS (http://localhost:3000)
+pnpm --filter @monorepo/client dev    # Next.js (http://localhost:3000)
+pnpm --filter @monorepo/server dev    # NestJS (http://localhost:4000)
 ```
 
 ## 📝 利用可能なコマンド

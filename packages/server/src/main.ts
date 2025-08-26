@@ -26,6 +26,6 @@ async function bootstrap() {
   // ロギング機能を有効化
   app.useGlobalInterceptors(app.get(LoggingInterceptor));
 
-  await app.listen(config.get('PORT') ?? 3000);
+  await app.listen(config.get('PORT') ?? 4000);
 }
 bootstrap();
