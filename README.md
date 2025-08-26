@@ -64,8 +64,8 @@ turbo-nextjs-nestjs/
 
 ### 必要な環境
 
-- Node.js 18以上
-- pnpm 8以上
+- Node.js 22以上
+- pnpm 10以上
 
 ### インストール
 
