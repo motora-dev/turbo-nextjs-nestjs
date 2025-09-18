@@ -64,8 +64,8 @@ turbo-nextjs-nestjs/
 
 ### 必要な環境
 
-- Node.js 18以上
-- pnpm 8以上
+- Node.js 22以上
+- pnpm 10以上
 
 ### インストール
 
@@ -81,8 +81,8 @@ pnpm install
 pnpm dev
 
 # 個別に起動
-pnpm --filter @monorepo/client dev    # Next.js (http://localhost:4200)
-pnpm --filter @monorepo/server dev    # NestJS (http://localhost:3000)
+pnpm --filter @monorepo/client dev    # Next.js (http://localhost:3000)
+pnpm --filter @monorepo/server dev    # NestJS (http://localhost:4000)
 ```
 
 ## 📝 利用可能なコマンド
