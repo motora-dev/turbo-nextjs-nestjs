@@ -12,7 +12,7 @@ export async function authenticatedFetch(
     next?: { revalidate?: number; tags?: string[] };
   },
 ): Promise<Response> {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
   const url = `${baseUrl}${path}`;
 
   // シングルトンからGoogle Authインスタンスを取得
