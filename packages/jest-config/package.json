@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/config-jest",
+  "name": "@monorepo/jest-config",
   "private": true,
   "devDependencies": {
     "@types/jest": "^29.5.0",

@@ -1,5 +1,5 @@
 {
-  "extends": "@monorepo/config-typescript",
+  "extends": "@monorepo/typescript-config",
   "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules", ".turbo", ".next", "src/**/*.spec.ts", "src/**/*.spec.tsx"],
   "compilerOptions": {

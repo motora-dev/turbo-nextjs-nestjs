@@ -1,5 +1,5 @@
 {
-  "extends": "@monorepo/config-typescript",
+  "extends": "@monorepo/typescript-config",
   "include": ["src/**/*.ts", "src/**/*.spec.ts"],
   "exclude": [".trubo", "coverage", "dist", "node_modules"],
   "compilerOptions": {

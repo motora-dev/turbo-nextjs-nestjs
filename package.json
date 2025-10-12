@@ -18,7 +18,7 @@
     "check-all": "pnpm build && pnpm check-types && pnpm check-types:spec && pnpm format && pnpm lint && pnpm test:coverage"
   },
   "devDependencies": {
-    "@monorepo/config-eslint": "workspace:*",
+    "@monorepo/eslint-config": "workspace:*",
     "husky": "^9.1.7",
     "turbo": "^2.5.5"
   },

@@ -1,9 +1,8 @@
 {
-  "name": "@monorepo/config-typescript",
+  "name": "@monorepo/typescript-config",
   "license": "UNLICENSED",
   "private": true,
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.32.0",
     "@typescript-eslint/parser": "^8.32.0",

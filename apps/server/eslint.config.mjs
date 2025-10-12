@@ -1,4 +1,4 @@
-import { baseConfig } from '@monorepo/config-eslint';
+import { baseConfig } from '@monorepo/eslint-config';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
 

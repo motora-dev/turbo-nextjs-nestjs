@@ -31,9 +31,9 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@monorepo/config-eslint": "workspace:*",
-    "@monorepo/config-jest": "workspace:*",
-    "@monorepo/config-typescript": "workspace:*",
+    "@monorepo/eslint-config": "workspace:*",
+    "@monorepo/jest-config": "workspace:*",
+    "@monorepo/typescript-config": "workspace:*",
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.1",

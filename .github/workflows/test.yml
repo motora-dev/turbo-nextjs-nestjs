@@ -61,7 +61,7 @@ jobs:
 
       - name: Setup test environment
         run: |
-          cd packages/server
+          cd apps/server
           echo "DATABASE_URL=${{ vars.DATABASE_URL }}" >> .env.test
           echo "NODE_ENV=test" >> .env.test
 
@@ -78,6 +78,6 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./packages/client/coverage/coverage-final.json,./packages/server/coverage/coverage-final.json
+          files: ./apps/client/coverage/coverage-final.json,./apps/server/coverage/coverage-final.json
           flags: client,server
           verbose: true
