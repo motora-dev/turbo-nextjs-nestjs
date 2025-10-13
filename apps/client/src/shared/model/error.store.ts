@@ -17,5 +17,3 @@ export const useErrorStore = create<ErrorStore>((set) => ({
   push: (e) => set((s) => ({ errors: [...s.errors, e] })),
   clear: () => set({ errors: [] }),
 }));
-
-

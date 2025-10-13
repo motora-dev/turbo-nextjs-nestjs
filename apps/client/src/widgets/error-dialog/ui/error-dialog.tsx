@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
+
 import { useErrorStore } from '@shared/model/error.store';
 
 export function ErrorDialog() {
@@ -28,9 +29,7 @@ export function ErrorDialog() {
     >
       <div style={{ fontWeight: 600, marginBottom: 6 }}>エラーが発生しました</div>
       <div style={{ opacity: 0.9, whiteSpace: 'pre-wrap' }}>{last.message}</div>
-      {last.at && (
-        <div style={{ marginTop: 6, fontSize: 12, opacity: 0.8 }}>at: {last.at}</div>
-      )}
+      {last.at && <div style={{ marginTop: 6, fontSize: 12, opacity: 0.8 }}>at: {last.at}</div>}
       <div style={{ marginTop: 10, textAlign: 'right' }}>
         <button
           onClick={clear}
@@ -49,5 +48,3 @@ export function ErrorDialog() {
     </div>
   );
 }
-
-

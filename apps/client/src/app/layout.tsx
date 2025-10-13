@@ -20,13 +20,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <Header />
           <main
-          style={{
-            maxWidth: '1280px',
-            margin: '0 auto',
-            padding: '48px 16px',
-          }}
-        >
-          {children}
+            style={{
+              maxWidth: '1280px',
+              margin: '0 auto',
+              padding: '48px 16px',
+            }}
+          >
+            {children}
           </main>
           <ErrorDialog />
         </Providers>

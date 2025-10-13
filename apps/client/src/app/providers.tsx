@@ -2,6 +2,7 @@
 
 import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
 import { ReactNode, useState } from 'react';
+
 import { useErrorStore } from '@shared/model/error.store';
 
 export function Providers({ children }: { children: ReactNode }) {
@@ -28,10 +29,8 @@ export function Providers({ children }: { children: ReactNode }) {
             retry: 1,
           },
         },
-      })
+      }),
   );
 
   return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
 }
-
-

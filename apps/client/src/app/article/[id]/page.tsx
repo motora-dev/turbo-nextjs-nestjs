@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { fetchArticleById } from '@entities/article/api';
+import { fetchArticleById } from '@entities/article';
 import { PrismHighlighter } from '@shared/ui/prism-highlighter';
 
 export default async function ArticlePage({ params }: { params: Promise<{ id: string }> }) {

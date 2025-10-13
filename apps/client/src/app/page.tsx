@@ -1,20 +1,10 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
-
-import { ArticleArraySchema } from '@entities/article-list/model/article-list.schema';
+import { useArticleListQuery } from '@entities/article-list';
 import { ArticleCard } from '@features/article-list';
 
 export default function HomePage() {
-  const { data, isLoading } = useQuery({
-    queryKey: ['articles'],
-    queryFn: async () => {
-      const res = await fetch('/api/article-list', { cache: 'no-store' });
-      if (!res.ok) throw new Error('failed to fetch articles');
-      const json = await res.json();
-      return ArticleArraySchema.parse(json);
-    },
-  });
+  const { data, isLoading } = useArticleListQuery();
 
   return (
     <div style={{ minHeight: '100vh' }}>

@@ -1,7 +1,8 @@
 import { NextRequest } from 'next/server';
-import { ArticleArraySchema } from '@entities/article-list/model/article-list.schema';
-import { getArticleList } from '@entities/article-list';
 import { ZodError } from 'zod';
+
+import { ArticleArraySchema } from '@entities/article-list';
+import { getArticleList } from '@entities/article-list';
 
 export async function GET(_req: NextRequest) {
   try {
@@ -15,5 +16,3 @@ export async function GET(_req: NextRequest) {
     return Response.json({ message: 'Internal Server Error' }, { status: 500 });
   }
 }
-
-
