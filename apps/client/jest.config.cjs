@@ -4,10 +4,10 @@ module.exports = {
   rootDir: '.',
   testEnvironment: 'jsdom',
   collectCoverage: process.env.COLLECT_COVERAGE === 'true',
-  collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx', '!src/**/*.spec.ts', '!src/**/*.spec.tsx', '!src/**/*.d.ts'],
+  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts', '!src/**/*.spec.ts'],
   coverageDirectory: './coverage',
   coverageReporters: ['text', 'json', 'lcov'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  moduleFileExtensions: ['ts', 'js', 'json'],
   testMatch: ['**/?(*.)+(spec).(ts|tsx)'],
   transform: {
     '^.+\\.(t|j)sx?$': [
@@ -18,7 +18,7 @@ module.exports = {
       },
     ],
   },
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  extensionsToTreatAsEsm: ['.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@libs/(.*)$': '<rootDir>/src/libs/$1',
