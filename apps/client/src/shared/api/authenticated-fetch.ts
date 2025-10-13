@@ -26,7 +26,7 @@ export async function authenticatedFetch(
   const headerObj = authHeaders instanceof Headers ? Object.fromEntries(authHeaders.entries()) : authHeaders;
 
   // Next.jsのfetchを使用（キャッシュ設定可能）
-  return fetch(url, {
+  return await fetch(url, {
     ...options,
     headers: {
       ...options?.headers,
