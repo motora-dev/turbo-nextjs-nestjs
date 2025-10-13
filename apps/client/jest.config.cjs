@@ -4,13 +4,13 @@ module.exports = {
   rootDir: '.',
   testEnvironment: 'jsdom',
   collectCoverage: process.env.COLLECT_COVERAGE === 'true',
-  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts', '!src/**/*.spec.ts'],
+  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts', '!src/**/*.spec.ts', '!index.ts'],
   coverageDirectory: './coverage/jest',
   coverageReporters: ['text', 'json', 'lcov'],
-  moduleFileExtensions: ['ts', 'js', 'json'],
-  testMatch: ['**/?(*.)+(spec).(ts|tsx)'],
+  moduleFileExtensions: ['ts', 'js'],
+  testMatch: ['**/?(*.)+(spec).(ts)'],
   transform: {
-    '^.+\\.(t|j)sx?$': [
+    '^.+\\.ts$': [
       'ts-jest',
       {
         tsconfig: 'tsconfig.spec.json',

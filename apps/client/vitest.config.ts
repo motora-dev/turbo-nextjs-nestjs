@@ -15,7 +15,7 @@ export default defineConfig({
       reportsDirectory: './coverage/storybook',
       reporter: ['text', 'json', 'lcov'],
       include: ['src/**/*.tsx'],
-      exclude: ['src/**/*.stories.tsx', 'src/**/*.spec.tsx', 'src/**/*.d.ts'],
+      exclude: ['src/**/*.stories.tsx'],
     },
     projects: [
       {
