@@ -1,17 +1,20 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
-import { getArticleList } from '@entities/article-list/api';
-import { useArticleListStore } from '@entities/article-list/model';
+import { ArticleArraySchema } from '@entities/article-list/model/article-list.schema';
 import { ArticleCard } from '@features/article-list';
 
 export default function HomePage() {
-  const { articles, fetchArticles } = useArticleListStore();
-
-  useEffect(() => {
-    fetchArticles(getArticleList);
-  }, [fetchArticles]);
+  const { data, isLoading } = useQuery({
+    queryKey: ['articles'],
+    queryFn: async () => {
+      const res = await fetch('/api/article-list', { cache: 'no-store' });
+      if (!res.ok) throw new Error('failed to fetch articles');
+      const json = await res.json();
+      return ArticleArraySchema.parse(json);
+    },
+  });
 
   return (
     <div style={{ minHeight: '100vh' }}>
@@ -36,7 +39,18 @@ export default function HomePage() {
         </p>
       </div>
 
-      {articles.length === 0 ? (
+      {isLoading ? (
+        <div
+          style={{
+            textAlign: 'center',
+            padding: '96px 0',
+            backgroundColor: '#F9FAFB',
+            borderRadius: '8px',
+          }}
+        >
+          <p style={{ fontSize: '18px', color: '#6B7280' }}>読み込み中...</p>
+        </div>
+      ) : !data || data.length === 0 ? (
         <div
           style={{
             textAlign: 'center',
@@ -55,7 +69,7 @@ export default function HomePage() {
             gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
           }}
         >
-          {articles.map((article) => (
+          {data.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
         </div>
