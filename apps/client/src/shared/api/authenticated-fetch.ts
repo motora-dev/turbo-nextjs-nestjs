@@ -1,17 +1,18 @@
 'server-only';
 
+import { createApiResponse, ApiResponse } from './api-response';
 import { getGoogleAuth } from './google-auth';
 
 /**
  * 認証付きでCloud Run APIを呼び出すためのfetch関数
  * Next.jsのキャッシュ機能も利用可能
  */
-export async function authenticatedFetch(
+export async function authenticatedFetch<T>(
   path: string,
   options?: RequestInit & {
     next?: { revalidate?: number; tags?: string[] };
   },
-): Promise<Response> {
+): Promise<ApiResponse<T>> {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
   const url = `${baseUrl}${path}`;
 
@@ -26,7 +27,7 @@ export async function authenticatedFetch(
   const headerObj = authHeaders instanceof Headers ? Object.fromEntries(authHeaders.entries()) : authHeaders;
 
   // Next.jsのfetchを使用（キャッシュ設定可能）
-  return await fetch(url, {
+  const res = await fetch(url, {
     ...options,
     headers: {
       ...options?.headers,
@@ -34,22 +35,6 @@ export async function authenticatedFetch(
       'Content-Type': 'application/json',
     },
   });
-}
 
-/**
- * 認証付きでJSONを取得するヘルパー関数
- */
-export async function authenticatedFetchJSON<T>(
-  path: string,
-  options?: RequestInit & {
-    next?: { revalidate?: number; tags?: string[] };
-  },
-): Promise<T> {
-  const response = await authenticatedFetch(path, options);
-
-  if (!response.ok) {
-    throw new Error(`API request failed: ${response.status} ${response.statusText}`);
-  }
-
-  return response.json();
+  return createApiResponse(res.status, res.statusText, await res.json());
 }

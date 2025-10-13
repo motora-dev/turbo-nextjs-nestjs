@@ -1,9 +1,10 @@
-import type { NextResponseLike } from './next-response';
+import type { ApiResponse } from './api-response';
+import type { ZodType } from 'zod';
 
-export function wrapperApi<T>(response: NextResponseLike<T>) {
+export function wrapperApi<T>(response: ApiResponse<unknown>, schema: ZodType<T>) {
   if (response.status !== 200) {
     throw new Error(`API request failed: ${response.status} ${response.statusText}`);
   }
 
-  return response.json;
+  return schema.parse(response.json);
 }

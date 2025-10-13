@@ -10,14 +10,13 @@ import { getArticleList } from './get-article-list.api';
 
 import type { Article } from '../model/article-list.schema';
 
-async function featchArticleList(): Promise<Article[]> {
-  const res = wrapperApi<Article[]>(await getArticleList());
-  return ArticleArraySchema.parse(res);
+async function fetchArticleList(): Promise<Article[]> {
+  return wrapperApi(await getArticleList(), ArticleArraySchema);
 }
 
 export function useArticleListQuery() {
   return useQuery<Article[]>({
     queryKey: ['articles'],
-    queryFn: featchArticleList,
+    queryFn: fetchArticleList,
   });
 }
