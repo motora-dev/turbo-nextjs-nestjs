@@ -1,4 +1,4 @@
-'use server';
+'server-only';
 
 import { getGoogleAuth } from './google-auth';
 

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import type { Article } from '@/types/article-list.type';
-import { getArticleList } from '@/services/article-list.service';
+
+import type { Article } from './article-list.type';
 
 // 記事リストストアの型定義
 interface ArticleListStore {
@@ -8,7 +8,7 @@ interface ArticleListStore {
 
   // アクション
   setArticles: (articles: Article[]) => void;
-  fetchArticles: () => Promise<void>;
+  fetchArticles: (fetcher: () => Promise<Article[]>) => Promise<void>;
 }
 
 // Zustandストアの作成
@@ -17,9 +17,9 @@ export const useArticleListStore = create<ArticleListStore>((set) => ({
 
   setArticles: (articles) => set({ articles }),
 
-  fetchArticles: async () => {
+  fetchArticles: async (fetcher) => {
     try {
-      const articles = await getArticleList();
+      const articles = await fetcher();
       set({ articles });
     } catch (error) {
       console.error('Failed to fetch articles:', error);

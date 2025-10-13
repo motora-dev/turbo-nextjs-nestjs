@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { fetchArticleById } from '@/services/article.service';
-import { PrismHighlighter } from '@/components/article/prism-highlighter';
+
+import { fetchArticleById } from '@entities/article/api';
+import { PrismHighlighter } from '@shared/ui/prism-highlighter';
 
 export default async function ArticlePage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;

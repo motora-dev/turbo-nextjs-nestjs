@@ -1,3 +1,5 @@
+'server-only';
+
 import { GoogleAuth } from 'google-auth-library';
 
 /**

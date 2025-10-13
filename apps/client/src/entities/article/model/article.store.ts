@@ -1,5 +1,6 @@
 import { create } from 'zustand';
-import type { Article } from '@/types/article.type';
+
+import type { Article } from './article.type';
 
 // 現在の記事ストアの型定義
 interface ArticleStore {

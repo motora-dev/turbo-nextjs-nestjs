@@ -21,8 +21,13 @@ module.exports = {
   extensionsToTreatAsEsm: ['.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^@libs/(.*)$': '<rootDir>/src/libs/$1',
-    '^@components/libs/(.*)$': '<rootDir>/src/components/libs/$1',
+    '^@shared/(.*)$': '<rootDir>/src/shared/$1',
+    '^@entities/(.*)$': '<rootDir>/src/entities/$1',
+    '^@features/(.*)$': '<rootDir>/src/features/$1',
+    '^@widgets/(.*)$': '<rootDir>/src/widgets/$1',
+    '^@pages/(.*)$': '<rootDir>/src/pages/$1',
+    '^@app/(.*)$': '<rootDir>/src/app/$1',
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };

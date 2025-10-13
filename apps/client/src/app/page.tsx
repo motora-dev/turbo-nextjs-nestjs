@@ -1,14 +1,16 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useArticleListStore } from '@/stores/article-list.store';
-import { ArticleCard } from '@/components/article-list/article-card';
+
+import { getArticleList } from '@entities/article-list/api';
+import { useArticleListStore } from '@entities/article-list/model';
+import { ArticleCard } from '@features/article-list';
 
 export default function HomePage() {
   const { articles, fetchArticles } = useArticleListStore();
 
   useEffect(() => {
-    fetchArticles();
+    fetchArticles(getArticleList);
   }, [fetchArticles]);
 
   return (

@@ -1,6 +1,8 @@
 'use server';
-import type { Article } from '@/types/article-list.type';
-import { authenticatedFetchJSON } from '@libs/authenticated-fetch';
+
+import { authenticatedFetchJSON } from '@shared/api';
+
+import type { Article } from '../model/article-list.type';
 
 // NestJS APIのレスポンス型
 interface ArticleApiResponse {

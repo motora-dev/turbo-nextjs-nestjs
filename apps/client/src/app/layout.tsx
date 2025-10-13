@@ -1,4 +1,5 @@
-import { Header } from '@/components/header';
+import { Header } from '@widgets/header';
+
 import './globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

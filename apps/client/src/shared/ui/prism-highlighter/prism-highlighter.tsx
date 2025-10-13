@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import Prism from 'prismjs';
+import { useEffect, useRef, useState } from 'react';
 
 // Prism Autoloader（CDNから必要な言語を自動ロード）
 import 'prismjs/plugins/autoloader/prism-autoloader';
-
 // Prismjsのテーマ
 import 'prismjs/themes/prism-tomorrow.css';
 

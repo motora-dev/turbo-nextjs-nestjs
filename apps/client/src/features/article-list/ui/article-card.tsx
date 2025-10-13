@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import type { Article } from '@/types/article-list.type';
+
+import type { Article } from '@entities/article-list/model';
 
 interface ArticleCardProps {
   article: Article;

@@ -1,8 +1,10 @@
-'use server';
-import { Article, ArticleResponse } from '@/types/article.type';
+'server-only';
+
 import MarkdownIt from 'markdown-it';
-import 'server-only';
-import { authenticatedFetchJSON } from '@libs/authenticated-fetch';
+
+import { authenticatedFetchJSON } from '@shared/api';
+
+import { Article, ArticleResponse } from '../model/article.type';
 
 // 簡単なHTMLエスケープ関数
 function escapeHtml(str: string): string {

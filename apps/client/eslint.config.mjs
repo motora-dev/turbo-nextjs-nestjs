@@ -17,6 +17,53 @@ const compat = new FlatCompat({
 
 const config = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...compat.extends('@feature-sliced'),
+  // @feature-sliced languageOptions
+  {
+    languageOptions: { ecmaVersion: 'latest' },
+  },
+  // Custom import/order for FSD structure
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    rules: {
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', ['external', 'internal'], 'parent', 'sibling', 'index', 'object', 'type'],
+          pathGroups: [
+            {
+              pattern: '{server-only,client-only}',
+              group: 'builtin',
+              position: 'before',
+            },
+            {
+              pattern: '@{shared,entities,features,widgets,pages,app}/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: '@/**',
+              group: 'internal',
+              position: 'after',
+            },
+          ],
+          pathGroupsExcludedImportTypes: ['builtin'],
+          'newlines-between': 'always',
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+        },
+      ],
+    },
+  },
+  // Disable strict public API rule, rely on boundaries instead
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    rules: {
+      'import/no-internal-modules': 'off',
+    },
+  },
   // Use tsconfig.spec.json for test files to enable typed linting on specs
   {
     files: ['src/**/*.spec.{ts,tsx}'],
