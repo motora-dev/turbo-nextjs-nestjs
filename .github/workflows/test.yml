@@ -59,6 +59,9 @@ jobs:
           export NODE_ENV=development
           pnpm install --frozen-lockfile
 
+      - name: Install Playwright browsers
+        run: pnpm --filter "@monorepo/client" exec playwright install --with-deps chromium
+
       - name: Setup test environment
         run: |
           cd apps/server
@@ -78,6 +81,6 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./apps/client/coverage/coverage-final.json,./apps/server/coverage/coverage-final.json
+          files: ./apps/client/coverage/jest/coverage-final.json,./apps/client/coverage/storybook/coverage-final.json,./apps/server/coverage/coverage-final.json
           flags: client,server
           verbose: true
