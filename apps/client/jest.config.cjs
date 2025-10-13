@@ -5,7 +5,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   collectCoverage: process.env.COLLECT_COVERAGE === 'true',
   collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts', '!src/**/*.spec.ts'],
-  coverageDirectory: './coverage',
+  coverageDirectory: './coverage/jest',
   coverageReporters: ['text', 'json', 'lcov'],
   moduleFileExtensions: ['ts', 'js', 'json'],
   testMatch: ['**/?(*.)+(spec).(ts|tsx)'],
