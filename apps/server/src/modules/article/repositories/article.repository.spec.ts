@@ -56,7 +56,7 @@ describe('ArticleRepository', () => {
 
   describe('getArticle', () => {
     it('should return article when found', async () => {
-      prisma.article.findUnique.mockResolvedValue(mockArticleWithAuthor);
+      jest.spyOn(prisma.article, 'findUnique').mockResolvedValue(mockArticleWithAuthor);
 
       const result = await repository.getArticle('test-article-ulid');
 
@@ -67,7 +67,7 @@ describe('ArticleRepository', () => {
     });
 
     it('should return null when article not found', async () => {
-      prisma.article.findUnique.mockResolvedValue(null);
+      jest.spyOn(prisma.article, 'findUnique').mockResolvedValue(null);
 
       const result = await repository.getArticle('test-article-ulid');
 
