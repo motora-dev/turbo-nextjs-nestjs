@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PrismaAdapterModule } from './prisma.adapter.module';
+
 import { PrismaAdapter } from './prisma.adapter';
+import { PrismaAdapterModule } from './prisma.adapter.module';
 
 describe('PrismaAdapterModule', () => {
   let module: TestingModule;

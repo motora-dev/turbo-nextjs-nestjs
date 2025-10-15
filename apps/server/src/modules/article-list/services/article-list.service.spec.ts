@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Article } from '@prisma/client';
+
 import { ArticleListService } from './article-list.service';
 import { ArticleListRepository } from '../repositories';
 

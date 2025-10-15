@@ -1,11 +1,12 @@
-import { Module } from '@nestjs/common';
-import { CqrsModule } from '@nestjs/cqrs';
-import { ConfigModule } from '@nestjs/config';
 import { PrismaAdapterModule, SupabaseAdapterModule } from '@adapters';
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { CqrsModule } from '@nestjs/cqrs';
+
 import { ArticleController } from './article.controller';
 import { GetArticleHandler } from './queries';
-import { ArticleService } from './services';
 import { ArticleRepository } from './repositories';
+import { ArticleService } from './services';
 
 const ArticleHandlers = [GetArticleHandler];
 

@@ -34,6 +34,16 @@ export const baseConfig = [
           alphabetize: { order: 'asc', caseInsensitive: true },
         },
       ],
+      // sort named imports within braces alphabetically; avoid conflict with import/order
+      'sort-imports': [
+        'error',
+        {
+          ignoreDeclarationSort: true,
+          ignoreMemberSort: false,
+          memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+          allowSeparatedGroups: true,
+        },
+      ],
     },
   },
   {

@@ -1,11 +1,12 @@
+import { PrismaAdapterModule, SupabaseStorageAdapter } from '@adapters';
 import { CqrsModule } from '@nestjs/cqrs';
 import { Test, TestingModule } from '@nestjs/testing';
-import { PrismaAdapterModule, SupabaseStorageAdapter } from '@adapters';
-import { ArticleModule } from './article.module';
+
 import { ArticleController } from './article.controller';
+import { ArticleModule } from './article.module';
 import { GetArticleHandler } from './queries';
-import { ArticleService } from './services';
 import { ArticleRepository } from './repositories';
+import { ArticleService } from './services';
 
 describe('ArticleModule', () => {
   let module: TestingModule;

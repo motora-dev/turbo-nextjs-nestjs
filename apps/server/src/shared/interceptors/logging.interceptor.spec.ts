@@ -1,6 +1,7 @@
-import { ExecutionContext, CallHandler } from '@nestjs/common';
+import { CallHandler, ExecutionContext } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { of, throwError } from 'rxjs';
+
 import { LoggingInterceptor } from './logging.interceptor';
 
 describe('LoggingInterceptor', () => {

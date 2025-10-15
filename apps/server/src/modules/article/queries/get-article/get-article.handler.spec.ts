@@ -1,7 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ArticleService } from '../../services';
+
 import { GetArticleHandler } from './get-article.handler';
 import { GetArticleQuery } from './get-article.query';
+import { ArticleService } from '../../services';
 
 describe('GetArticleHandler', () => {
   let handler: GetArticleHandler;

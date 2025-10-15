@@ -1,6 +1,6 @@
+import { PrismaAdapter } from '@adapters';
 import { Injectable } from '@nestjs/common';
 import { Article } from '@prisma/client';
-import { PrismaAdapter } from '@adapters';
 
 @Injectable()
 export class ArticleListRepository {

@@ -1,4 +1,5 @@
 import * as supabaseJs from '@supabase/supabase-js';
+
 import { createServerSupabase } from './supabase.factory';
 
 describe('supabase.factory', () => {

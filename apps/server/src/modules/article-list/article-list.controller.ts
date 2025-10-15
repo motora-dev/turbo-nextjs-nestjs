@@ -1,5 +1,6 @@
-import { Controller, HttpCode, HttpStatus, Get } from '@nestjs/common';
+import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
 import { QueryBus } from '@nestjs/cqrs';
+
 import { GetArticleListResponse } from './dto';
 import { GetArticleListQuery } from './queries';
 
