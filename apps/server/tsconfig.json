@@ -11,12 +11,12 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "paths": {
-      "@adapters*": ["src/libs/adapters*"],
-      "@decorators/*": ["src/libs/decorators/*"],
-      "@guards/*": ["src/libs/guards/*"],
-      "@libs*": ["src/libs*"],
+      "@adapters*": ["src/shared/adapters*"],
+      "@decorators/*": ["src/shared/decorators/*"],
+      "@guards/*": ["src/shared/guards/*"],
       "@modules*": ["src/modules*"],
-      "@prisma*": ["src/libs/adapters/prisma*"]
+      "@prisma*": ["src/shared/adapters/prisma*"],
+      "@shared*": ["src/shared*"]
     },
     "types": ["node", "jest"]
   }

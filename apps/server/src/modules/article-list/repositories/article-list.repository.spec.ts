@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Article } from '@prisma/client';
-import { PrismaAdapter } from '@adapters/prisma/prisma.adapter';
+import { PrismaAdapter } from 'src/shared/adapters/prisma/prisma.adapter';
 import { ArticleListRepository } from './article-list.repository';
 
 describe('ArticleListRepository', () => {

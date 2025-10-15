@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
-import { LoggingInterceptor } from '@libs/interceptors/logging.interceptor';
+import { LoggingInterceptor } from 'src/shared/interceptors/logging.interceptor';
 import { ArticleModule } from '@modules/article/article.module';
 import { ArticleListModule } from '@modules/article-list/article-list.module';
-import { GoogleCloudAuthGuard } from '@libs/guards/google-cloud-auth.guard';
+import { GoogleCloudAuthGuard } from 'src/shared/guards/google-cloud-auth.guard';
 
 @Module({
   providers: [

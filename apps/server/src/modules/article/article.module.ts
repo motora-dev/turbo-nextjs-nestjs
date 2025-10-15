@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
 import { ConfigModule } from '@nestjs/config';
-import { PrismaAdapterModule } from '@adapters/prisma/prisma.adapter.module';
-import { SupabaseAdapterModule } from '../../libs/adapters/supabase/supabase.storage.adapter.module';
+import { PrismaAdapterModule } from 'src/shared/adapters/prisma/prisma.adapter.module';
+import { SupabaseAdapterModule } from '../../shared/adapters/supabase/supabase.storage.adapter.module';
 import { ArticleController } from './article.controller';
 import { GetArticleHandler } from './queries';
 import { ArticleService } from './services';

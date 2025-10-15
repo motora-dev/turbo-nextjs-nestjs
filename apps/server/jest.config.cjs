@@ -20,8 +20,8 @@ module.exports = {
   testEnvironment: 'node',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^@adapters/(.*)$': '<rootDir>/src/libs/adapters/$1',
+    '^@adapters/(.*)$': '<rootDir>/src/shared/adapters/$1',
     '^@modules/(.*)$': '<rootDir>/src/modules/$1',
-    '^@libs/(.*)$': '<rootDir>/src/libs/$1',
+    '^@shared/(.*)$': '<rootDir>/src/shared/$1',
   },
 };

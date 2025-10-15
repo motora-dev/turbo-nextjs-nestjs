@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { SupabaseStorageAdapter } from '@libs/adapters/supabase/supabase.storage.adapter';
+import { SupabaseStorageAdapter } from 'src/shared/adapters/supabase/supabase.storage.adapter';
 import { Article } from '@prisma/client';
 import { GetArticleResponse } from '../dto';
 import { ArticleRepository } from '../repositories';
