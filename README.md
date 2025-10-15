@@ -16,13 +16,13 @@
 
 ```
 turbo-nextjs-nestjs/
-├── packages/
+├── apps/               # アプリケーション
 │   ├── client/         # Next.js フロントエンドアプリケーション
-│   ├── server/         # NestJS バックエンドAPI
-│   └── shared/         # 共有設定パッケージ
-│       ├── config-eslint/      # ESLint設定
-│       ├── config-jest/        # Jest設定
-│       └── config-typescript/  # TypeScript設定
+│   └── server/         # NestJS バックエンドAPI
+├── packages/           # 共有設定パッケージ
+│   ├── eslint-config/      # ESLint設定
+│   ├── jest-config/        # Jest設定
+│   └── typescript-config/  # TypeScript設定
 ├── pnpm-workspace.yaml
 ├── turbo.json
 └── package.json
@@ -30,7 +30,7 @@ turbo-nextjs-nestjs/
 
 ### アプリケーション詳細
 
-#### 📱 Client (`packages/client`)
+#### 📱 Client (`apps/client`)
 
 - **Framework**: [Next.js](https://nextjs.org/) 15.4.2 (App Router)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) v4 + CSS Modules
@@ -38,7 +38,7 @@ turbo-nextjs-nestjs/
 - **Testing**: Jest + React Testing Library
 - **Linting**: ESLint (Flat Config) + Stylelint
 
-#### 🚀 Server (`packages/server`)
+#### 🚀 Server (`apps/server`)
 
 - **Framework**: [NestJS](https://nestjs.com/) 11.0
 - **Platform**: Express
@@ -47,9 +47,9 @@ turbo-nextjs-nestjs/
 
 #### 📦 Shared Packages
 
-- **@monorepo/config-eslint**: 共通ESLint設定（TypeScript対応）
-- **@monorepo/config-jest**: Jest設定とカスタム型定義
-- **@monorepo/config-typescript**: 基本TypeScript設定
+- **@monorepo/eslint-config**: 共通ESLint設定（TypeScript対応）
+- **@monorepo/jest-config**: Jest設定とカスタム型定義
+- **@monorepo/typescript-config**: 基本TypeScript設定
 
 ## 🛠 技術スタック
 

@@ -1,0 +1,23 @@
+{
+  "extends": "@monorepo/typescript-config",
+  "include": ["src/**/*.ts", "src/**/*.spec.ts"],
+  "exclude": [".trubo", "coverage", "dist", "node_modules"],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@adapters": ["src/shared/adapters/index.ts"],
+      "@decorators": ["src/shared/decorators/index.ts"],
+      "@guards": ["src/shared/guards/index.ts"],
+      "@interceptors": ["src/shared/interceptors/index.ts"],
+      "@modules/*": ["src/modules/*"],
+      "@shared/*": ["src/shared/*"]
+    },
+    "types": ["node", "jest"]
+  }
+}
