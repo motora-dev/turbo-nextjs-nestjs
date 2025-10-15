@@ -1,3 +1,2 @@
-export type { Article, ArticleResponse } from './model/article.type';
-export { useArticleStore } from './model/article.store';
-export { fetchArticleById } from './api/article.service';
+export { useArticleQuery } from './api/use-article.query';
+export { ArticleSchema, ArticleResponseSchema } from './model/article.schema';
