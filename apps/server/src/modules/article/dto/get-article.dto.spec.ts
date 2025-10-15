@@ -1,4 +1,4 @@
-import { GetArticleRequest, GetArticleResponse } from './article.dto';
+import { GetArticleRequest, GetArticleResponse } from './get-article.dto';
 
 describe('GetArticleResponse DTOs', () => {
   describe('GetArticleRequest', () => {

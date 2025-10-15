@@ -3,10 +3,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { PrismaAdapterModule } from '@adapters/prisma/prisma.adapter.module';
 import { SupabaseStorageAdapter } from '@adapters/supabase/supabase.storage.adapter';
 import { ArticleModule } from './article.module';
-import { ArticleController } from './controllers/article.controller';
-import { GetArticleHandler } from './controllers/queries/handlers/get-article.handler';
-import { ArticleService } from './providers/article.service';
-import { ArticleRepository } from './providers/article.repository';
+import { ArticleController } from './article.controller';
+import { GetArticleHandler } from './queries';
+import { ArticleService } from './services';
+import { ArticleRepository } from './repositories';
 
 describe('ArticleModule', () => {
   let module: TestingModule;

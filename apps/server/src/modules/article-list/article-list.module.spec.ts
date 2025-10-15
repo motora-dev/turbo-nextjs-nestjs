@@ -2,10 +2,10 @@ import { CqrsModule } from '@nestjs/cqrs';
 import { Test, TestingModule } from '@nestjs/testing';
 import { PrismaAdapterModule } from '@adapters/prisma/prisma.adapter.module';
 import { ArticleListModule } from './article-list.module';
-import { ArticleListController } from './controllers/article-list.controller';
-import { GetArticleListHandler } from './controllers/queries/handlers/get-article-list.handler';
-import { ArticleListRepository } from './providers/article-list.repository';
-import { ArticleListService } from './providers/article-list.service';
+import { ArticleListController } from './article-list.controller';
+import { GetArticleListHandler } from './queries';
+import { ArticleListRepository } from './repositories';
+import { ArticleListService } from './services';
 
 describe('ArticleListModule', () => {
   let module: TestingModule;

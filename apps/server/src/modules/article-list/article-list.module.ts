@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
 import { PrismaAdapterModule } from '@adapters/prisma/prisma.adapter.module';
-import { ArticleListController } from './controllers/article-list.controller';
-import { GetArticleListHandler } from './controllers/queries/handlers/get-article-list.handler';
-import { ArticleListService } from './providers/article-list.service';
-import { ArticleListRepository } from './providers/article-list.repository';
+import { ArticleListController } from './article-list.controller';
+import { GetArticleListHandler } from './queries';
+import { ArticleListService } from './services';
+import { ArticleListRepository } from './repositories';
 
 const ArticleHandlers = [GetArticleListHandler];
 

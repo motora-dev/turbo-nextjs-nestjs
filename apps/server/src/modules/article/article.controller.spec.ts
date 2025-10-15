@@ -1,7 +1,7 @@
 import { QueryBus } from '@nestjs/cqrs';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ArticleController } from './article.controller';
-import { GetArticleQuery } from './queries/impl/get-article.query';
+import { GetArticleQuery } from './queries';
 
 describe('ArticleController', () => {
   let controller: ArticleController;

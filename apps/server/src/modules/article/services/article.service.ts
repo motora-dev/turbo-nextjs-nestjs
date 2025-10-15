@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { SupabaseStorageAdapter } from '@libs/adapters/supabase/supabase.storage.adapter';
 import { Article } from '@prisma/client';
-import { ArticleRepository } from './article.repository';
-import { GetArticleResponse } from '../controllers/dto/article.dto';
+import { GetArticleResponse } from '../dto';
+import { ArticleRepository } from '../repositories';
 
 @Injectable()
 export class ArticleService {

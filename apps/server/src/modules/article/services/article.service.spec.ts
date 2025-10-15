@@ -1,8 +1,8 @@
 import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { SupabaseStorageAdapter } from '@adapters/supabase/supabase.storage.adapter';
+import { ArticleRepository } from '../repositories';
 import { ArticleService } from './article.service';
-import { ArticleRepository } from './article.repository';
 
 describe('ArticleService', () => {
   let service: ArticleService;

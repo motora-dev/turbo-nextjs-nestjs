@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Article } from '@prisma/client';
 import { ArticleListService } from './article-list.service';
-import { ArticleListRepository } from './article-list.repository';
+import { ArticleListRepository } from '../repositories';
 
 describe('ArticleListService', () => {
   let service: ArticleListService;

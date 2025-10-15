@@ -1,4 +1,4 @@
-import { Article, GetArticleListResponse } from './article-list.dto';
+import { Article, GetArticleListResponse } from './get-article-list.dto';
 
 describe('ArticleListDTO', () => {
   describe('Article', () => {

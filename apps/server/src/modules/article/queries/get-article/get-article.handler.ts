@@ -1,7 +1,7 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { GetArticleQuery } from '../impl/get-article.query';
-import { GetArticleResponse } from '../../dto/article.dto';
-import { ArticleService } from '@modules/article/providers/article.service';
+import { GetArticleResponse } from '../../dto';
+import { ArticleService } from '../../services';
+import { GetArticleQuery } from './get-article.query';
 
 @QueryHandler(GetArticleQuery)
 export class GetArticleHandler implements IQueryHandler<GetArticleQuery> {

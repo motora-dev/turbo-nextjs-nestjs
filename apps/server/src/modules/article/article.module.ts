@@ -3,10 +3,10 @@ import { CqrsModule } from '@nestjs/cqrs';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaAdapterModule } from '@adapters/prisma/prisma.adapter.module';
 import { SupabaseAdapterModule } from '../../libs/adapters/supabase/supabase.storage.adapter.module';
-import { ArticleController } from './controllers/article.controller';
-import { ArticleService } from './providers/article.service';
-import { ArticleRepository } from './providers/article.repository';
-import { GetArticleHandler } from './controllers/queries/handlers/get-article.handler';
+import { ArticleController } from './article.controller';
+import { GetArticleHandler } from './queries';
+import { ArticleService } from './services';
+import { ArticleRepository } from './repositories';
 
 const ArticleHandlers = [GetArticleHandler];
 

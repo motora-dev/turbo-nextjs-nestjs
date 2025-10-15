@@ -1,7 +1,7 @@
 import { Controller, HttpCode, HttpStatus, Get } from '@nestjs/common';
-import { GetArticleListResponse } from './dto/article-list.dto';
 import { QueryBus } from '@nestjs/cqrs';
-import { GetArticleListQuery } from './queries/impl/get-article-list.query';
+import { GetArticleListResponse } from './dto';
+import { GetArticleListQuery } from './queries';
 
 @Controller('article-list')
 export class ArticleListController {

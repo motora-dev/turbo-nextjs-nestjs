@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Article } from '@prisma/client';
-import { ArticleListRepository } from './article-list.repository';
-import { GetArticleListResponse } from '../controllers/dto/article-list.dto';
+import { ArticleListRepository } from '../repositories';
+import { GetArticleListResponse } from '../dto';
 
 @Injectable()
 export class ArticleListService {
