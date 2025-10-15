@@ -11,12 +11,12 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "paths": {
-      "@adapters*": ["src/shared/adapters*"],
-      "@decorators/*": ["src/shared/decorators/*"],
-      "@guards/*": ["src/shared/guards/*"],
-      "@modules*": ["src/modules*"],
-      "@prisma*": ["src/shared/adapters/prisma*"],
-      "@shared*": ["src/shared*"]
+      "@adapters": ["src/shared/adapters/index.ts"],
+      "@decorators": ["src/shared/decorators/index.ts"],
+      "@guards": ["src/shared/guards/index.ts"],
+      "@interceptors": ["src/shared/interceptors/index.ts"],
+      "@modules/*": ["src/modules/*"],
+      "@shared/*": ["src/shared/*"]
     },
     "types": ["node", "jest"]
   }

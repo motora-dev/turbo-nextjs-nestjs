@@ -20,7 +20,10 @@ module.exports = {
   testEnvironment: 'node',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^@adapters/(.*)$': '<rootDir>/src/shared/adapters/$1',
+    '^@adapters$': '<rootDir>/src/shared/adapters/index.ts',
+    '^@decorators': '<rootDir>/src/shared/decorators/index.ts',
+    '^@guards': '<rootDir>/src/shared/guards/index.ts',
+    '^@interceptors': '<rootDir>/src/shared/interceptors/index.ts',
     '^@modules/(.*)$': '<rootDir>/src/modules/$1',
     '^@shared/(.*)$': '<rootDir>/src/shared/$1',
   },

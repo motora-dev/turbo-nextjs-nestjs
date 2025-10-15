@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Article } from '@prisma/client';
-import { PrismaAdapter } from 'src/shared/adapters/prisma/prisma.adapter';
+import { PrismaAdapter } from '@adapters';
 
 @Injectable()
 export class ArticleRepository {

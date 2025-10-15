@@ -1,12 +1,12 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
 import tsparser from '@typescript-eslint/parser';
 import jest from 'eslint-plugin-jest';
 import jestdom from 'eslint-plugin-jest-dom';
-import testinglibrary from 'eslint-plugin-testing-library';
 import storybook from 'eslint-plugin-storybook';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import testinglibrary from 'eslint-plugin-testing-library';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
