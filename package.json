@@ -15,14 +15,15 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
+    "outdated": "pnpm outdated -r | grep -v '@types/node' || true",
     "check-all": "pnpm build && pnpm check-types && pnpm check-types:spec && pnpm format && pnpm lint && pnpm test:coverage"
   },
   "devDependencies": {
     "@monorepo/eslint-config": "workspace:*",
     "husky": "^9.1.7",
-    "turbo": "^2.5.5"
+    "turbo": "^2.5.8"
   },
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.18.3",
   "engines": {
     "node": ">=22"
   }
