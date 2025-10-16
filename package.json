@@ -15,6 +15,7 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
+    "outdated": "pnpm outdated -r | grep -v '@types/node' || true",
     "check-all": "pnpm build && pnpm check-types && pnpm check-types:spec && pnpm format && pnpm lint && pnpm test:coverage"
   },
   "devDependencies": {

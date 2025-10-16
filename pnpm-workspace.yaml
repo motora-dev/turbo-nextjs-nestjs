@@ -2,6 +2,9 @@ packages:
   - apps/*
   - packages/*
 
+catalog:
+  '@types/node': ^22.18.0
+
 ignoredBuiltDependencies:
   - '@nestjs/core'
   - '@prisma/client'
