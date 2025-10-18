@@ -1,8 +1,8 @@
 import { PrismaAdapter } from '@adapters';
 import { Test, TestingModule } from '@nestjs/testing';
-import { Article } from '@prisma/client';
 
 import { ArticleListRepository } from './article-list.repository';
+import type { Article } from '@prisma/client';
 
 describe('ArticleListRepository', () => {
   let repository: ArticleListRepository;

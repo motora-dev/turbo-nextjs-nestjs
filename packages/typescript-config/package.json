@@ -2,7 +2,6 @@
   "name": "@monorepo/typescript-config",
   "license": "UNLICENSED",
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "typescript": "5.9.3"
   }
