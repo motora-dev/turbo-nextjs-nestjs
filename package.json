@@ -2,29 +2,30 @@
   "name": "@monorepo/root",
   "private": true,
   "scripts": {
-    "prepare": "husky install",
-    "clean": "turbo run clean && pnpm run clean:root",
+    "prepare": "husky",
+    "clean": "turbo run clean && pnpm run clean:root && pnpm store prune",
     "clean:root": "find . -type d \\( -name \".turbo\" -o -name \"node_modules\" \\) -prune -exec rm -rf '{}' +",
     "build": "turbo run build",
     "start": "turbo run start",
     "start:prd": "turbo run start:prd",
     "check-types": "turbo run check-types",
-    "check-types:spec": "turbo run check-types:spec",
     "format": "turbo run format",
     "format:fix": "turbo run format:fix",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
-    "outdated": "pnpm outdated -r | grep -v '@types/node' || true",
-    "check-all": "pnpm build && pnpm check-types && pnpm check-types:spec && pnpm format && pnpm lint && pnpm test:coverage"
+    "check-all": "pnpm check-types && pnpm format && pnpm lint && pnpm build && pnpm test:coverage"
   },
   "devDependencies": {
     "@monorepo/eslint-config": "workspace:*",
+    "@types/node": "catalog:",
     "husky": "^9.1.7",
     "turbo": "^2.5.8"
   },
   "packageManager": "pnpm@10.18.3",
   "engines": {
-    "node": ">=22"
+    "node": "22.18.0",
+    "pnpm": "10.18.3"
   }
 }
