@@ -20,7 +20,7 @@ coverage:
 
   # カバレッジ計測から除外するファイル・ディレクトリ
   ignore:
-    - 'packages/shared/config-*/**'
+    - 'packages/**'
     - '**/*.spec.**'
     - '**/coverage/**'
     - '**/dist/**'

@@ -13,11 +13,11 @@ RUN apt-get update && \
 
 # Copy package.json and other configuration files
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
-COPY packages/server/package.json ./packages/server/
-COPY packages/shared/config-eslint/package.json ./packages/shared/config-eslint/
-COPY packages/shared/config-jest/package.json ./packages/shared/config-jest/
-COPY packages/shared/config-typescript/package.json ./packages/shared/config-typescript/
-COPY packages/server/prisma/ ./packages/server/prisma/
+COPY apps/server/package.json ./apps/server/
+COPY packages/eslint-config/package.json ./packages/eslint-config/
+COPY packages/jest-config/package.json ./packages/jest-config/
+COPY packages/typescript-config/package.json ./packages/typescript-config/
+COPY apps/server/prisma/ ./apps/server/prisma/
 
 # Install dependencies
 RUN pnpm install --frozen-lockfile
@@ -43,10 +43,10 @@ RUN apt-get update && \
 # Copy necessary files from builder stage
 COPY --from=builder /app/package.json /app/pnpm-lock.yaml /app/pnpm-workspace.yaml ./
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/packages/server/dist ./packages/server/dist
-COPY --from=builder /app/packages/server/node_modules ./packages/server/node_modules
-COPY --from=builder /app/packages/server/package.json ./packages/server/
-COPY --from=builder /app/packages/server/prisma ./packages/server/prisma
+COPY --from=builder /app/apps/server/dist ./apps/server/dist
+COPY --from=builder /app/apps/server/node_modules ./apps/server/node_modules
+COPY --from=builder /app/apps/server/package.json ./apps/server/
+COPY --from=builder /app/apps/server/prisma ./apps/server/prisma
 
 # Set environment variables
 ENV NODE_ENV=production
@@ -56,7 +56,7 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Set working directory to server
-WORKDIR /app/packages/server
+WORKDIR /app/apps/server
 
 # Start the server
 CMD ["node", "dist/main.js"]

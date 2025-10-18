@@ -1,12 +1,17 @@
 packages:
+  - apps/*
   - packages/*
-  - packages/shared/*
+
+catalog:
+  '@types/node': 22.18.10
 
 ignoredBuiltDependencies:
   - '@nestjs/core'
   - '@prisma/client'
   - '@prisma/engines'
+  - '@swc/core'
   - '@tailwindcss/oxide'
+  - esbuild
   - prisma
   - sharp
   - unrs-resolver

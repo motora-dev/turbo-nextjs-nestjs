@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,turbo,nextjs,macos,windows,linux
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,turbo,nextjs,macos,windows,linux
+# Created by https://www.toptal.com/developers/gitignore/api/node,linux,macos,turbo,nextjs,windows,storybookjs
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,linux,macos,turbo,nextjs,windows,storybookjs
 
 ### Linux ###
 *~
@@ -219,6 +219,12 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+### StorybookJs ###
+# gitignore template for the Storybook, UI guide for front apps
+# website: https://storybook.js.org/
+
+storybook-static/
+
 ### Turbo ###
 # Turborepo task cache
 .turbo
@@ -249,4 +255,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/node,turbo,nextjs,macos,windows,linux
+# End of https://www.toptal.com/developers/gitignore/api/node,linux,macos,turbo,nextjs,windows,storybookjs
+
+*storybook.log
