@@ -11,10 +11,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "paths": {
-      "@adapters": ["src/shared/adapters/index.ts"],
-      "@decorators": ["src/shared/decorators/index.ts"],
-      "@guards": ["src/shared/guards/index.ts"],
-      "@interceptors": ["src/shared/interceptors/index.ts"],
+      "@adapters": ["src/shared/adapters"],
+      "@decorators": ["src/shared/decorators"],
+      "@guards": ["src/shared/guards"],
+      "@interceptors": ["src/shared/interceptors"],
       "@modules/*": ["src/modules/*"],
       "@shared/*": ["src/shared/*"]
     },
